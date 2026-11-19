@@ -3,14 +3,14 @@
   "id": "primitive-tidefork",
   "dir": "tidefork",
   "name": "2048",
-  "subtitle": "Slide and merge to make 2048",
+  "subtitle": "Merge tiles and beat your best score",
   "developer": {
     "name": "Primitive AI"
   },
   "categories": [
     "games"
   ],
-  "description": "Swipe to move every tile toward one edge. Matching numbers merge and add to your score. A new tile appears after each move that changes the board. Make a 2048 tile, then keep playing for a higher score.\n\nYour board and best score save between launches. The original Tidefork challenges and saved progress are available under Line puzzles.",
+  "description": "Swipe to move every tile toward one edge. Matching numbers merge and add to your score. A 2 or 4 appears after each move that changes the board. Keep playing past 2048 and beat your best score before you run out of moves.\n\nYour board and best score save between launches. The original Tidefork challenges and saved progress are available under Line puzzles.",
   "repo": "https://github.com/DoanNguyenTrong/kindle-primitive-tidefork",
   "licence": "PolyForm-Noncommercial-1.0.0",
   "source": "hosted",

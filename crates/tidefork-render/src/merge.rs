@@ -23,7 +23,7 @@ pub struct View {
     puzzles: PuzzleView,
     in_puzzles: bool,
     confirming: bool,
-    save_failed: bool,
+    needs_save: bool,
 }
 
 impl View {
@@ -42,7 +42,7 @@ impl View {
             puzzles: PuzzleView::open(directory.join("tidefork.json")),
             in_puzzles: false,
             confirming: false,
-            save_failed: false,
+            needs_save: false,
         }
     }
 
@@ -53,18 +53,22 @@ impl View {
             puzzles: PuzzleView::preview(),
             in_puzzles: false,
             confirming: false,
-            save_failed: false,
+            needs_save: false,
         }
     }
 
     fn board_changed(&mut self) -> Change {
-        self.save_failed = self.save_board().is_err();
+        self.needs_save = true;
+        let _ = self.save_board();
         Change::Partial
     }
 
-    fn save_board(&self) -> io::Result<()> {
-        if let Some(path) = &self.path {
-            primitive_app::save(path, &serde_json::to_vec(&self.game)?)?;
+    fn save_board(&mut self) -> io::Result<()> {
+        if self.needs_save {
+            if let Some(path) = &self.path {
+                primitive_app::save(path, &serde_json::to_vec(&self.game)?)?;
+            }
+            self.needs_save = false;
         }
         Ok(())
     }
@@ -126,14 +130,13 @@ impl App for View {
         header(canvas, "2048", "Done");
         draw_score(canvas, 40, "Score", self.game.score());
         draw_score(canvas, 648, "Best", self.game.best());
-        let message = if self.save_failed {
+        let finished = self.game.finished();
+        let message = if self.needs_save {
             "Could not save the board."
-        } else if self.game.finished() {
+        } else if finished {
             "No moves left. Start a new game."
-        } else if self.game.reached_goal() {
-            "2048 reached. Keep playing."
         } else {
-            "Swipe to slide the board. Make a 2048 tile."
+            "Swipe to merge tiles and score."
         };
         canvas.text(screen_rect(w, 40, 292, 1184, 58), message, BODY.center());
 
@@ -174,7 +177,7 @@ impl App for View {
             canvas.icon(centered_icon(bounds, canvas.px(46)), arrow(direction), ink);
         }
         canvas.button(puzzles_button(w), "Line puzzles", false, false);
-        canvas.button(new_button(w), "New game", self.game.finished(), false);
+        canvas.button(new_button(w), "New game", finished, false);
 
         if self.confirming {
             restart_sheet(canvas.bounds()).draw(canvas, None);

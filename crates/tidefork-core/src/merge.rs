@@ -4,7 +4,6 @@ use serde::{Deserialize, Serialize};
 
 use crate::{Direction, SIZE};
 
-pub const GOAL: u32 = 2048;
 type Board = [u32; SIZE * SIZE];
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -47,10 +46,6 @@ impl MergeGame {
 
     pub fn best(&self) -> u64 {
         self.best
-    }
-
-    pub fn reached_goal(&self) -> bool {
-        self.board.iter().any(|&value| value >= GOAL)
     }
 
     pub fn finished(&self) -> bool {
@@ -171,22 +166,27 @@ mod tests {
     }
 
     #[test]
-    fn only_a_changed_board_spawns_and_reaching_goal_preserves_play() {
+    fn only_a_changed_board_spawns_and_play_continues_past_2048() {
         let mut game = MergeGame::new(7);
         assert_eq!(game.board.iter().filter(|&&value| value != 0).count(), 2);
         game.board = [1024, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        game.score = 12_345_678;
+        game.best = game.score;
         let before = game.clone();
         assert!(!game.play(Direction::Left));
         assert_eq!(game, before);
         assert!(game.play(Direction::Up));
-        assert_eq!(game.board[0], GOAL);
+        assert_eq!(game.board[0], 2048);
         assert_eq!(game.board.iter().filter(|&&value| value != 0).count(), 2);
-        assert!(game.reached_goal());
         assert!(!game.finished());
-        assert_eq!(game.score, 2048);
+        assert_eq!(game.score, 12_347_726);
+        game.board = [2048, 0, 0, 0, 2048, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        assert!(game.play(Direction::Up));
+        assert_eq!(game.board[0], 4096);
+        assert_eq!(game.score, 12_351_822);
         game.restart();
         assert_eq!(game.score, 0);
-        assert_eq!(game.best, 2048);
+        assert_eq!(game.best, 12_351_822);
     }
 
     #[test]

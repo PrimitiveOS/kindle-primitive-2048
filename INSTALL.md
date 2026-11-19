@@ -12,6 +12,6 @@ Run from this checkout with Tools, Launcher, and Build next to it.
 cargo zigbuild --offline --locked --release -p tidefork-kindle --target armv7-unknown-linux-musleabihf
 sh scripts/stage.sh armhf
 python3 ../doannt-kindle-build/scripts/package.py --id primitive-tidefork --dir tidefork \
-  --version 0.1.1 --arch armhf --stage build/stage --license LICENSE \
+  --version 0.1.2 --arch armhf --stage build/stage --license LICENSE \
   --docs-license LICENSE-DOCS --install INSTALL.md --out dist
 ```

@@ -1,6 +1,6 @@
 # 2048
 
-**Swipe the board and merge matching tiles to reach 2048.**
+**Swipe the board, merge matching tiles, and beat your best score.**
 
 2048 is a native number game for PrimitiveOS with swipe controls and large direction buttons for Kindle.
 
@@ -8,7 +8,7 @@
 
 - **Slide the whole board.** Swipe across the board or tap a direction button below it. All tiles slide as far as they can in that direction.
 - **Merge equal tiles.** Two matching tiles become one tile worth their sum. Each tile can merge once per move. You earn the new tile's value, and a new 2 or 4 appears after a move that changes the board.
-- **Reach 2048.** Keep playing for a higher score while moves remain. **New game** resets the board and keeps your best score.
+- **Play for a high score.** Keep merging as long as there are moves. Tiles can grow beyond 2048. **New game** resets the board and keeps your best score.
 
 Your board saves between launches. Open **Line puzzles** to play the ten original Tidefork challenges, one row or column at a time. Existing puzzle progress carries forward. **Done** returns to Launcher.
 

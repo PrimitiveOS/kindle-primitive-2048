@@ -19,6 +19,7 @@ pub struct PuzzleView {
     pub game: Game,
     path: Option<PathBuf>,
     confirming_reset: bool,
+    needs_save: bool,
     notice: Option<&'static str>,
 }
 
@@ -39,6 +40,7 @@ impl PuzzleView {
             game,
             path: Some(path),
             confirming_reset: false,
+            needs_save: false,
             notice: None,
         }
     }
@@ -48,11 +50,13 @@ impl PuzzleView {
             game: Game::new(),
             path: None,
             confirming_reset: false,
+            needs_save: false,
             notice: None,
         }
     }
 
     fn persist(&mut self) {
+        self.needs_save = true;
         if self.save().is_err() {
             self.notice = Some("Could not save this puzzle.");
         }
@@ -223,8 +227,11 @@ impl App for PuzzleView {
     }
 
     fn save(&mut self) -> io::Result<()> {
-        if let Some(path) = &self.path {
-            primitive_app::save(path, &serde_json::to_vec(self.game.progress())?)?;
+        if self.needs_save {
+            if let Some(path) = &self.path {
+                primitive_app::save(path, &serde_json::to_vec(self.game.progress())?)?;
+            }
+            self.needs_save = false;
         }
         Ok(())
     }
