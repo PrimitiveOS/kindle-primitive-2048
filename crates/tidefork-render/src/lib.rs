@@ -11,14 +11,18 @@ use primitive_ui::{
 };
 use tidefork_core::{Direction, Game, Move, Status, PUZZLES, SIZE};
 
-pub struct View {
+mod merge;
+
+pub use merge::View;
+
+pub struct PuzzleView {
     pub game: Game,
     path: Option<PathBuf>,
     confirming_reset: bool,
     notice: Option<&'static str>,
 }
 
-impl View {
+impl PuzzleView {
     pub fn open(path: PathBuf) -> Self {
         let game = File::open(&path)
             .ok()
@@ -108,10 +112,10 @@ impl View {
     }
 }
 
-impl App for View {
+impl App for PuzzleView {
     fn draw(&self, canvas: &mut Canvas) {
         let w = canvas.bounds().w;
-        header(canvas, "Tidefork", "Done");
+        header(canvas, "Line puzzles", "Back");
         let state = self.game.status();
         let moves = self.game.moves_left();
         let move_label = if moves == 1 { "move" } else { "moves" };

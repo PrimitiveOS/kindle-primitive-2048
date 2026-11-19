@@ -2,15 +2,15 @@
   "schema": 1,
   "id": "primitive-tidefork",
   "dir": "tidefork",
-  "name": "Tidefork",
-  "subtitle": "Merge tiles one line at a time",
+  "name": "2048",
+  "subtitle": "Slide and merge to make 2048",
   "developer": {
     "name": "Primitive AI"
   },
   "categories": [
     "games"
   ],
-  "description": "Tap an arrow at the edge of the board to slide only that row or column. Equal tiles fuse when they meet. Make the target tile before the puzzle runs out of moves.\n\nReach the target to unlock the next puzzle. Use Undo to take back a move or reset to try a different route.",
+  "description": "Swipe to move every tile toward one edge. Matching numbers merge and add to your score. A new tile appears after each move that changes the board. Make a 2048 tile, then keep playing for a higher score.\n\nYour board and best score save between launches. The original Tidefork challenges and saved progress are available under Line puzzles.",
   "repo": "https://github.com/DoanNguyenTrong/kindle-primitive-tidefork",
   "licence": "PolyForm-Noncommercial-1.0.0",
   "source": "hosted",

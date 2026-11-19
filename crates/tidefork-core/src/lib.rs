@@ -1,6 +1,8 @@
-//! Tidefork slides one line at a time. Each tile can merge once per move.
+//! Rules for the scored sliding board and the original line puzzles.
 
 use serde::{Deserialize, Serialize};
+
+pub mod merge;
 
 pub const SIZE: usize = 4;
 pub type Board = [u16; SIZE * SIZE];
