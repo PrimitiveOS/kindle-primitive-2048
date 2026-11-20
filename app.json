@@ -11,7 +11,7 @@
     "games"
   ],
   "description": "Swipe to move every tile toward one edge. Matching numbers merge and add to your score. A 2 or 4 appears after each move that changes the board. Keep playing past 2048 and beat your best score before you run out of moves.\n\nYour board and best score save between launches. The original Tidefork challenges and saved progress are available under Line puzzles.",
-  "repo": "https://github.com/DoanNguyenTrong/kindle-primitive-tidefork",
+  "repo": "https://github.com/DoanNguyenTrong/kindle-primitive-2048",
   "licence": "PolyForm-Noncommercial-1.0.0",
   "source": "hosted",
   "icon": "icon.png",
