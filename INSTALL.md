@@ -1,6 +1,6 @@
 # Install 2048
 
-After [setting up PrimitiveOS](https://github.com/DoanNguyenTrong/kindle-primitive-launcher/blob/main/docs/INSTALL.md#first-time-setup-over-usb), open **Store** from Launcher.
+After [setting up PrimitiveOS](https://github.com/PrimitiveOS/kindle-primitive-launcher/blob/main/docs/INSTALL.md#first-time-setup-over-usb), open **Store** from Launcher.
 Find **2048** under **Apps**, tap **Get**, then open it from the Launcher grid.
 If you already installed Tidefork, tap **Update**. Your existing progress is available under **Line puzzles**.
 
