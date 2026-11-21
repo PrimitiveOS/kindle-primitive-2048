@@ -127,7 +127,7 @@ impl App for View {
         }
 
         let w = canvas.bounds().w;
-        header(canvas, "2048", "Done");
+        header(canvas, "2048", "Exit");
         draw_score(canvas, 40, "Score", self.game.score());
         draw_score(canvas, 648, "Best", self.game.best());
         let finished = self.game.finished();
