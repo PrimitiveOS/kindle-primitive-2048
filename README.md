@@ -6,7 +6,12 @@
 
 **Merge tiles and beat your best score**
 
-[![Release](https://img.shields.io/github/v/release/PrimitiveOS/kindle-primitive-2048?label=release)](https://github.com/PrimitiveOS/kindle-primitive-2048/releases) [![Licence: PolyForm-Noncommercial-1.0.0](https://img.shields.io/badge/licence-PolyForm--Noncommercial--1.0.0-blue)](LICENSE) [![Store downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fprimitiveos.github.io%2Fkindle-primitive-catalog%2Fv1%2Fbadges%2Fprimitive-tidefork.json)](https://primitiveos.github.io/kindle-primitive-catalog/v1/index.json)
+[![CI](https://img.shields.io/github/actions/workflow/status/PrimitiveOS/kindle-primitive-2048/ci.yml?branch=main&label=CI)](https://github.com/PrimitiveOS/kindle-primitive-2048/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/PrimitiveOS/kindle-primitive-2048?label=release)](https://github.com/PrimitiveOS/kindle-primitive-2048/releases)
+[![Tag](https://img.shields.io/github/v/tag/PrimitiveOS/kindle-primitive-2048?label=tag)](https://github.com/PrimitiveOS/kindle-primitive-2048/tags)
+[![Licence: PolyForm-Noncommercial-1.0.0](https://img.shields.io/badge/licence-PolyForm--Noncommercial--1.0.0-blue)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/PrimitiveOS/kindle-primitive-2048?style=social)](https://github.com/PrimitiveOS/kindle-primitive-2048/stargazers)
+[![Store downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fprimitiveos.github.io%2Fkindle-primitive-catalog%2Fv1%2Fbadges%2Fprimitive-tidefork.json)](https://primitiveos.github.io/kindle-primitive-catalog/v1/index.json)
 
 [**Download**](https://github.com/PrimitiveOS/kindle-primitive-2048/releases/latest) · [**Install guide**](INSTALL.md) · [**Changelog**](CHANGELOG.md)
 
