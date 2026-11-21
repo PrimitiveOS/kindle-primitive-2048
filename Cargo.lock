@@ -958,14 +958,14 @@ dependencies = [
 
 [[package]]
 name = "tidefork-core"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "serde",
 ]
 
 [[package]]
 name = "tidefork-desktop"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "primitive-app",
  "primitive-ui",
@@ -975,7 +975,7 @@ dependencies = [
 
 [[package]]
 name = "tidefork-kindle"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "primitive-app",
  "tidefork-core",
@@ -984,7 +984,7 @@ dependencies = [
 
 [[package]]
 name = "tidefork-render"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "primitive-app",
  "primitive-ui",
