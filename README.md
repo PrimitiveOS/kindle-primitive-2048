@@ -1,16 +1,27 @@
+<div align="center">
+
+<img src="icon.png" alt="2048 icon" width="110">
+
 # 2048
 
-**Swipe the board, merge matching tiles, and beat your best score.**
+**Merge tiles and beat your best score**
 
-2048 is a native number game for PrimitiveOS with swipe controls and large direction buttons for Kindle.
+[![Release](https://img.shields.io/github/v/release/PrimitiveOS/kindle-primitive-2048?label=release)](https://github.com/PrimitiveOS/kindle-primitive-2048/releases) [![Licence: PolyForm-Noncommercial-1.0.0](https://img.shields.io/badge/licence-PolyForm--Noncommercial--1.0.0-blue)](LICENSE) [![Store downloads](https://img.shields.io/badge/Store%20downloads-60-brightgreen)](https://primitiveos.github.io/kindle-primitive-catalog/v1/index.json)
 
-## How to play
+[**Download**](https://github.com/PrimitiveOS/kindle-primitive-2048/releases/latest) · [**Install guide**](INSTALL.md) · [**Changelog**](CHANGELOG.md)
 
-- **Slide the whole board.** Swipe across the board or tap a direction button below it. All tiles slide as far as they can in that direction.
-- **Merge equal tiles.** Two matching tiles become one tile worth their sum. Each tile can merge once per move. You earn the new tile's value, and a new 2 or 4 appears after a move that changes the board.
-- **Play for a high score.** Keep merging as long as there are moves. Tiles can grow beyond 2048. **New game** resets the board and keeps your best score.
+</div>
 
-Your board saves between launches. Open **Line puzzles** to play the ten original Tidefork challenges, one row or column at a time. Existing puzzle progress carries forward. **Done** returns to Launcher.
+---
+
+Swipe to move every tile toward one edge. Matching numbers merge and add to your score. A 2 or 4 appears after each move that changes the board. Keep playing past 2048 and beat your best score before you run out of moves.
+
+Your board and best score save between launches. The original Tidefork challenges and saved progress are available under Line puzzles.
+
+## Quick start
+
+After setting up PrimitiveOS, open **Store** from Primitive Launcher. Choose **2048** under **Apps**,
+tap **Get**, and open it from the Launcher grid. The [install guide](INSTALL.md) also covers the standalone USB package.
 
 ## Screenshots
 
@@ -24,11 +35,6 @@ Your board saves between launches. Open **Line puzzles** to play the ten origina
 
 Desktop simulation captures at 1264 × 1680 pixels.
 
-## Install
-
-After setting up PrimitiveOS, open **Store** from Launcher. Find **2048** under **Apps** and choose **Get**.
-See the [installation guide](INSTALL.md) for the local build workflow.
-
 ## Develop locally
 
 Keep the Tools and Launcher checkouts next to this repository.
@@ -39,6 +45,29 @@ cargo run --offline --locked -p tidefork-desktop
 ```
 
 The desktop target exercises the touch controls and writes previews to `build/previews/`.
+
+## Highlights
+
+- Swipe to move every tile toward one edge.
+- Matching numbers merge and add to your score.
+- A 2 or 4 appears after each move that changes the board.
+
+## Status
+
+| Device | Status |
+|---|---|
+| Kindle Oasis 3 (1264 × 1680, firmware 5.18.2) | Tested on hardware |
+
+**Current version: 0.1.4.** Changes are in [CHANGELOG.md](CHANGELOG.md).
+
+## Downloads
+
+**60 downloads** from Store, as of 2026-11-21. Store shows the same count on the app page.
+The count is GitHub downloads of this app's release packages, from the [Store catalog](https://primitiveos.github.io/kindle-primitive-catalog/v1/index.json).
+
+## Documentation
+
+[Install guide](INSTALL.md) · [Changelog](CHANGELOG.md)
 
 ## Licence
 
